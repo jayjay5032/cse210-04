@@ -33,7 +33,7 @@ root                    (project root folder)
 
 ## Authors
 ---
-Ruei-Han Chang (cha16007@byui.edu)
-Junhee Hays (mjh226@byui.edu)
-Angela Slinker (slinker@byui.edu)
-Trevor Jones (tjones689@byui.edu)
+* Ruei-Han Chang (cha16007@byui.edu)
+* Junhee Hays (mjh226@byui.edu)
+* Angela Slinker (slinker@byui.edu)
+* Trevor Jones (tjones689@byui.edu)
