@@ -1,27 +1,62 @@
 # Design for Greed
 
-Our design will largely be a mimic of the preparation for this week. We will have 4 main parts under the names casting, directing, services, and shared. Casting will contain an actor file that will be passed into the artifact for the sake of reusing code. Actor will create the player character while artifact will create the items to be interacted with. The third file named cast will be used to keep track of everything. Directing will contain our director file. Services will house anything that will be to and from to the user, this includes one that reads the keyboard inputs and one that displays the current information. The final group, named shared, will house files called color and point. Color is used to create the color profile of both the actors and artifacts. Point is used to determine the starting position of the pieces. All of this will mostly be used from the given code for this week.
-
-The following shows the part of code we would modify or add:
-1. add artifact.move_next() in director.py to allow the gems(artifact) to move
-2. 
+Our design will largely be a mimic of the preparation “RobotFindsKitten (Rfk)”. In RobotFindsKitten (Rfk), the artifact inherits the attributes from the actor to reduce repeating codes. Our design changes the additional attributes of the artifact. Instead of set and get messages, we replace them with the score factor to determent the score change when the player touches a gem or rock. Corresponded changes to meet the game specification were done in the code as well. The following snippet of design shows the inherited relationship between actor and artifact:
 
 
-### Object: display
+## Object: Actor
 
-Responsibility: determined the content to display on the screen
+Responsibility: A visible, moveable thing that participates in the game. The responsibility of Actor is to keep track of its appearance, position, and velocity in 2D space.
 
-State:
-Guess result in list, Life pic in list, Message to display
+Attributes:
+_text (string): The text to display
+_font_size (int): The font size to use.
+_color (Color): The color of the text.
+_position (Point): The screen coordinates.
+_velocity (Point): The speed and direction.
+
 
 Behavior:
-Content to display
+get_color, get_font_size, get_position, get_text, get_velocity, move_next, set_color, set_position, set_font_size, set_text, set_velocity 
+
 ```
-class:display
+class: Actor
 
-Guess_result_in_list: list
-Life_pic_in_list: list
-Message_to_display: string
+Attributes:
+_text (string): The text to display
+_font_size (int): The font size to use.
+_color (Color): The color of the text.
+_position (Point): The screen coordinates.
+_velocity (Point): The speed and direction.
 
-Content_to_display: list, string
+Functions
+get_color(): _color
+get_font_size(): _font_size
+get_position(): _position
+get_text(): _text
+get_velocity(): _velocity
+move_next(): Moves the actor to its next position
+set_color(): Updates the color
+set_position(): Updates the position
+set_font_size(): Updates the font size
+set_text(): Updates the text
+set_velocity(): Updates the velocity
+```
+
+## Object: Artifact
+
+Responsibility: An item of cultural or historical interest. The responsibility of an Artifact is to determent the score change when the player touches a gem or rock.
+Attributes:
+super().__init__(): inherit all attributes and functions from Actor
+
+Behavior:
+get_score_factor 
+
+```
+class: Artifact
+
+Attributes:
+super().__init__(): inherit all attributes and functions from Actor
+
+Functions
+get_score_factor(): determent the score change when the player touches a gem or rock
 ```
