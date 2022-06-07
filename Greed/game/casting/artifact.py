@@ -17,6 +17,6 @@ class Artifact(Actor):
         if artifact == '*':
             return score + 1
         if artifact == 'o':
-            return score - 1 
+            return score - 1
 
     

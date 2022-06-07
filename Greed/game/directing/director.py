@@ -64,13 +64,12 @@ class Director:
         robot.move_next(max_x, max_y)
         
         # new codes
-        velocity = Point(0, 5)
+        speed = Point(0,5)
         if len(artifacts) > 0:
-            artifacts[random.randint(0, len(artifacts) - 1)].set_velocity(velocity)
-        for artifact in artifacts:
-            artifact.move_next(max_x, max_y)
+            artifacts[random.randint(0, len(artifacts) - 1)].set_velocity(speed)            
         
         for artifact in artifacts:
+            artifact.move_next(max_x, max_y)
             if robot.get_position().equals(artifact.get_position()):
                 self._score = artifact.get_score_factor(self._score, artifact.get_text())
                 cast.remove_actor("artifacts", artifact) 
