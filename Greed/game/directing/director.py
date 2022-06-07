@@ -65,7 +65,8 @@ class Director:
         
         # new codes
         velocity = Point(0, 5)
-        artifacts[random.randint(0, len(artifacts) - 1)].set_velocity(velocity)
+        if len(artifacts) > 0:
+            artifacts[random.randint(0, len(artifacts) - 1)].set_velocity(velocity)
         for artifact in artifacts:
             artifact.move_next(max_x, max_y)
         
