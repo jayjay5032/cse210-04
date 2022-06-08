@@ -17,8 +17,8 @@ from game.shared.point import Point
 FRAME_RATE = 12
 MAX_X = 900
 MAX_Y = 600
-CELL_SIZE = 15
-FONT_SIZE = 15
+CELL_SIZE = 30
+FONT_SIZE = 30
 COLS = 60
 ROWS = 40
 CAPTION = "Greed"
@@ -80,6 +80,7 @@ def main():
     video_service = VideoService(CAPTION, MAX_X, MAX_Y, CELL_SIZE, FRAME_RATE)
     director = Director(keyboard_service, video_service)
     director.start_game(cast)
+    
 
 
 if __name__ == "__main__":

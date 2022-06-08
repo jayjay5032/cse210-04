@@ -44,6 +44,7 @@ class Director:
         Args:
             cast (Cast): The cast of actors.
         """
+        # set upper and lower limits for robot to travel vertically 
         robot = cast.get_first_actor("robots")
         velocity = self._keyboard_service.get_direction()
         robot.set_velocity(velocity)        
@@ -63,7 +64,6 @@ class Director:
         max_y = self._video_service.get_height()
         robot.move_next(max_x, max_y)
         
-        # new codes
         speed = Point(0,5)
         if len(artifacts) > 0:
             artifacts[random.randint(0, len(artifacts) - 1)].set_velocity(speed)            
@@ -72,9 +72,9 @@ class Director:
             artifact.move_next(max_x, max_y)
             if robot.get_position().equals(artifact.get_position()):
                 self._score = artifact.get_score_factor(self._score, artifact.get_text())
-                cast.remove_actor("artifacts", artifact) 
+                cast.remove_actor("artifacts", artifact)
+                # add one new artifact
         banner.set_text(f'Score: {self._score}')
-        #new codes ends
 
     def _do_outputs(self, cast):
         """Draws the actors on the screen.
