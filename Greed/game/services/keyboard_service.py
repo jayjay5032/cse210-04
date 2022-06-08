@@ -37,8 +37,6 @@ class KeyboardService:
 
         true_height = max - self._cell_size
 
-        print(true_height)
-
         if (cPos <= true_height - (true_height / 3)) == False:
 
             if pyray.is_key_down(pyray.KEY_UP):
