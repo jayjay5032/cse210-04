@@ -45,6 +45,7 @@ set_velocity(): Updates the velocity
 ## Object: Artifact
 
 Responsibility: An item of cultural or historical interest. The responsibility of an Artifact is to determent the score change when the player touches a gem or rock.
+
 Attributes:
 super().__init__(): inherit all attributes and functions from Actor
 
