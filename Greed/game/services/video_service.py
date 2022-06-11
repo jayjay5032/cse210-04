@@ -19,6 +19,7 @@ class VideoService:
         self._frame_rate = frame_rate
         self._debug = debug
 
+
     def close_window(self):
         """Closes the window and releases all computing resources."""
         pyray.close_window()
@@ -44,6 +45,7 @@ class VideoService:
         font_size = actor.get_font_size()
         color = actor.get_color().to_tuple()
         pyray.draw_text(text, x, y, font_size, color)
+
         
     def draw_actors(self, actors):
         """Draws the text for the given list of actors on the screen.

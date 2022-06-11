@@ -1,0 +1,5 @@
+game/casting/__pycache__
+game/directing/__pycache__
+game/services/__pycache__
+game/shared/__pycache__
+.DS_Store

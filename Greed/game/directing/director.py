@@ -1,6 +1,7 @@
 from game.casting.artifact import Artifact
 from game.shared.point import Point
 
+
 import random
 
 
@@ -75,6 +76,9 @@ class Director:
             if robot.get_position().equals(artifact.get_position()):
                 self._score = artifact.get_score_factor(self._score, artifact.get_text())
                 cast.remove_actor("artifacts", artifact) 
+                artifact = Artifact.random_artifact()
+                cast.add_actor("artifacts", artifact)
+    
         banner.set_text(f'Score: {self._score}')
         #new codes ends
 

@@ -19,14 +19,11 @@ MAX_X = 900
 MAX_Y = 600
 CELL_SIZE = 30
 FONT_SIZE = 30
-COLS = 60
 ROWS = 40
 CAPTION = "Greed"
 DATA_PATH = os.path.dirname(os.path.abspath(__file__)) + "/data/messages.txt"
 WHITE = Color(255, 255, 255)
 DEFAULT_ARTIFACTS = 40
-GEM_OR_ROCK = ['*', 'o']
-
 
 
 def main():
@@ -56,23 +53,7 @@ def main():
     
     # create the artifacts
     for n in range(DEFAULT_ARTIFACTS):
-        text = GEM_OR_ROCK[(random.randint(0, len(GEM_OR_ROCK) - 1))]
-
-        x = random.randint(1, COLS - 1)
-        y = 1
-        position = Point(x, y)
-        position = position.scale(CELL_SIZE)
-
-        r = random.randint(0, 255)
-        g = random.randint(0, 255)
-        b = random.randint(0, 255)
-        color = Color(r, g, b)
-        
-        artifact = Artifact()
-        artifact.set_text(text)
-        artifact.set_font_size(FONT_SIZE)
-        artifact.set_color(color)
-        artifact.set_position(position)
+        artifact = Artifact.random_artifact()
         cast.add_actor("artifacts", artifact)
     
     # start the game
