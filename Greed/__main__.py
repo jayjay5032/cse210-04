@@ -55,7 +55,9 @@ def main():
     for n in range(DEFAULT_ARTIFACTS):
         artifact = Artifact.random_artifact()
         cast.add_actor("artifacts", artifact)
-    
+        # to make the artifact move (junhee)
+        # artifact.set_velocity(Point(15,15))
+
     # start the game
     keyboard_service = KeyboardService(CELL_SIZE)
     video_service = VideoService(CAPTION, MAX_X, MAX_Y, CELL_SIZE, FRAME_RATE)
